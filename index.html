@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeVideoAI.club - Premium Dashboard</title>
+    <!-- Tailwind Engine -->
+    <script src="https://jsdelivr.net"></script>
+    <script async src="https://googlesyndication.com" crossorigin="anonymous"></script>
+</head>
+<body class="bg-[#070A13] text-white font-sans min-h-screen flex flex-col" style="background-color: #070a13; color: white; margin: 0; min-height: 100vh; display: flex; flex-direction: column;">
+
+    <!-- Top Navigation Premium Header Area Layout Component -->
+    <header style="background-color: rgba(14, 20, 38, 0.7); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(139, 92, 246, 0.2); padding: 16px 32px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);">
+        <div style="display: flex; align-items: center; gap: 32px;">
+            <h1 style="font-weight: 900; font-size: 26px; background: linear-gradient(to right, #a78bfa, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0; letter-spacing: 0.05em;">FreeVideoAI.club</h1>
+            <nav style="display: flex; gap: 20px; font-size: 14px; font-weight: 600; color: #9ca3af;">
+                <span style="color: #22d3ee; cursor: pointer; border-bottom: 2px solid #22d3ee; padding-bottom: 4px;">Studio Layout</span>
+                <span onclick="alert('History gallery features unlocked after login!')" style="cursor: pointer; hover: color: white;">Video History</span>
+                <span onclick="alert('Premium billing configurations active!')" style="cursor: pointer;">Pricing API</span>
+            </nav>
+        </div>
+        <button onclick="openModal()" style="background: linear-gradient(to right, rgba(139, 92, 246, 0.2), rgba(6, 182, 212, 0.2)); border: 1px solid #8b5cf6; color: #a78bfa; padding: 8px 20px; border-radius: 12px; font-size: 13px; font-weight: bold; cursor: pointer; tracking-wide uppercase; box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);">
+            Account Sign In 🔐
+        </button>
+    </header>
+
+    <!-- Ad Area Section Leaderboard slot -->
+    <div style="max-width: 1280px; width: 100%; margin: 24px auto 0 auto; padding: 0 16px; box-sizing: border-box;">
+        <div style="border: 1px solid rgba(139, 92, 246, 0.2); background-color: rgba(14, 20, 38, 0.6); padding: 20px; border-radius: 16px; text-align: center; color: rgba(167, 139, 250, 0.6); font-size: 13px; font-weight: bold; tracking-wider uppercase;">
+            ADVERTISEMENT PLACEHOLDER - LEADERBOARD BANNER (728x90)
+        </div>
+    </div>
+
+    <!-- Main Dynamic Application Workspace Grid Panels layout -->
+    <main style="max-width: 1280px; width: 100%; margin: 24px auto; padding: 0 16px; display: flex; flex-wrap: wrap; gap: 24px; flex-grow: 1; box-sizing: border-box;">
+        
+        <!-- Left Column Block Card Layout Area Box Component -->
+        <div style="flex: 2; min-width: 320px; background: rgba(14, 20, 38, 0.65); border: 1px solid rgba(255, 255, 255, 0.05); padding: 28px; border-radius: 24px; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; backdrop-filter: blur(16px); box-shadow: 0 20px 50px rgba(0,0,0,0.4);">
+            <div>
+                <h2 style="color: #8b5cf6; font-size: 22px; font-weight: 800; margin-bottom: 24px; margin-top: 0; letter-spacing: -0.02em;">🔮 Core Generation Dashboard</h2>
+                
+                <label style="color: #9ca3af; font-size: 11px; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; display: block; letter-spacing: 0.1em;">Describe Video Scene Prompt:</label>
+                <textarea id="promptInput" rows="4" style="width: 100%; box-sizing: border-box; background-color: #0b0f19; border: 1px solid rgba(139, 92, 246, 0.25); border-radius: 14px; padding: 16px; color: white; font-size: 14px; resize: none; font-family: inherit; outline: none; focus: border-purple-500;" placeholder="Describe your video vision details here..."></textarea>
+                
+                <div style="display: flex; gap: 16px; margin-top: 20px;">
+                    <div style="flex: 1;">
+                        <label style="color: #9ca3af; font-size: 11px; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; display: block; letter-spacing: 0.1em;">Choose Aspect Format:</label>
+                        <select id="aspectRatio" style="width: 100%; background-color: #0b0f19; border: 1px solid rgba(139, 92, 246, 0.25); border-radius: 14px; padding: 14px; color: white; font-size: 14px; font-family: inherit; cursor: pointer;">
+                            <option value="16:9">🎬 16:9 Cinema Wide / Landscape</option>
+                            <option value="9:16">📱 9:16 vertical Mobile / Shorts</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Player Output Display Container Components -->
+            <div style="background-color: #0b0f19; border: 1px solid rgba(255, 255, 255, 0.03); border-radius: 16px; padding: 24px; margin-top: 28px; min-height: 320px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; box-sizing: border-box; overflow: hidden; position: relative;">
+                
+                <div id="idleState">
+                    <div style="font-size: 40px; margin-bottom: 12px; filter: drop-shadow(0 0 10px rgba(6,182,212,0.4));">✨</div>
+                    <p style="color: #6b7280; font-size: 13px; font-weight: 500; margin: 0;">Your high-definition AI rendering output will compile right here</p>
+                </div>
+
+                <div id="loadingState" style="display: none;">
+                    <div style="border: 3px solid rgba(6, 182, 212, 0.1); border-top: 3px solid #06b6d4; border-radius: 50%; width: 40px; height: 40px; margin: 0 auto 16px auto; animation: spin 0.8s linear infinite; filter: drop-shadow(0 0 8px #06b6d4);"></div>
+                    <p id="loadingText" style="color: #06b6d4; font-size: 14px; font-weight: 700; margin: 0; text-transform: uppercase; letter-spacing: 0.1em;">1. Processing prompt parameters...</p>
+                </div>
+
+                <video id="videoPlayer" style="display: none; width: 100%; max-height: 280px; border-radius: 10px; outline: none;" controls></video>
+            </div>
+
+            <!-- Execution Action CTA Form Button triggers JS logic blocks -->
+            <button onclick="startSimulation()" style="width: 100%; border: none; background: linear-gradient(to right, #8b5cf6, #06b6d4); color: white; font-weight: 800; padding: 18px; border-radius: 14px; font-size: 14px; text-transform: uppercase; cursor: pointer; margin-top: 28px; letter-spacing: 0.1em; box-shadow: 0 4px 20px rgba(6, 182, 212, 0.25);">
+                Compile AI Video Rendering Engine →
+            </button>
+        </div>
+
+        <!-- Right Side: Skyscraper Column Layout Ad Space Container Box -->
+        <div style="flex: 1; min-width: 280px; background: rgba(14, 20, 38, 0.65); border: 1px solid rgba(255, 255, 255, 0.05); padding: 24px; border-radius: 24px; display: flex; flex-direction: column; justify-content: center; align-items: center; box-sizing: border-box; backdrop-filter: blur(16px); box-shadow: 0 20px 50px rgba(0,0,0,0.4);">
+            <div style="width: 100%; height: 100%; min-height: 500px; box-sizing: border-box; border: 1px dashed rgba(139, 92, 246, 0.3); background-color: rgba(139, 92, 246, 0.02); border-radius: 16px; display: flex; justify-content: center; align-items: center; color: rgba(167, 139, 250, 0.5); font-size: 13px; font-weight: bold; text-align: center; line-height: 1.8; uppercase tracking-widest;">
+                ADVERTISEMENT PLACEHOLDER<br>SKYSCRAPER BANNER<br>(300x600)
+            </div>
+        </div>
+
+    </main>
+
+    <!-- User Sign Up Authentication Glassmorphism Modal Pop Up Element -->
+    <div id="authModal" style="display: none; position: fixed; inset: 0; background-color: rgba(3, 5, 11, 0.85); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 9999; padding: 20px;">
+        <div style="background-color: #0e1322; border: 1px solid rgba(139, 92, 246, 0.3); padding: 32px; border-radius: 24px; max-width: 400px; width: 100%; box-sizing: border-box; box-shadow: 0 10px 40px rgba(139, 92, 246, 0.2); position: relative;">
+            <span onclick="closeModal()" style="position: absolute; top: 16px; right: 20px; color: #6b7280; cursor: pointer; font-size: 20px; font-weight: bold; hover: color: white;">&times;</span>
+            <h3 style="margin: 0 0 8px 0; font-size: 22px; font-weight: 800; background: linear-gradient(to right, #8b5cf6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Create Network Profile</h3>
+            <p style="color: #6b7280; font-size: 13px; margin: 0 0 24px 0; font-weight: 500;">Access unlimited renderings and past history dashboard files</p>
+            
+            <label style="color: #9ca3af; font-size: 11px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: block; tracking-wider;">Email Address:</label>
+            <input type="email" placeholder="name@domain.com" style="width: 100%; box-sizing: border-box; background-color: #070a13; border: 1px solid rgba(255,255,255,0.1); padding: 12px 16px; border-radius: 12px; color: white; font-size: 14px; margin-bottom: 16px; outline: none;">
+            
+            <label style="color: #9ca3af; font-size: 11px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: block; tracking-wider;">Secret Access Password:</label>
